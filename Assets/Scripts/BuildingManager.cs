@@ -10,14 +10,19 @@ public class BuildingManager : MonoBehaviour
     private Camera mainCamera;
 
 
+    private void Awake()
+    {
+        //Resources is unity function that allows you to find objects even assets at run time without a reference
+        //Finding the scriptable objects list
+        buildingTypeList = Resources.Load<BuildingTypeListSO>(typeof(BuildingTypeListSO).Name);
+        
+        //Sets the default building type to element 0 on the list
+        buildingType = buildingTypeList.buildingTypeSOList[0];
+    }
 
     private void Start()
     {
         mainCamera = Camera.main;
-
-        //Resources is unity function that allows you to find objects even assets at run time without a reference
-        //Finding the scriptable objects list
-       buildingTypeList = Resources.Load<BuildingTypeListSO>(typeof(BuildingTypeListSO).Name);
 
     }
     private void Update()
