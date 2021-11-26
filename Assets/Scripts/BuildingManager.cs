@@ -4,25 +4,40 @@ using UnityEngine;
 
 public class BuildingManager : MonoBehaviour
 {
-    [SerializeField]
-    private Transform pfWoodHarvester;
+    
+    private  BuildingTypeSO buildingType;
+    private  BuildingTypeListSO buildingTypeList;
     private Camera mainCamera;
 
-    
+
 
     private void Start()
     {
         mainCamera = Camera.main;
+
+        //Resources is unity function that allows you to find objects even assets at run time without a reference
+        //Finding the scriptable objects list
+       buildingTypeList = Resources.Load<BuildingTypeListSO>(typeof(BuildingTypeListSO).Name);
+
     }
-
-
     private void Update()
     {
         
         if (Input.GetMouseButtonDown(0))
         {
-            Instantiate(pfWoodHarvester, GetMouseWorldPosition(), Quaternion.identity );
+            Instantiate(buildingType.prefab, GetMouseWorldPosition(), Quaternion.identity );
         }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            buildingType = buildingTypeList.buildingTypeSOList[0];
+        }
+        
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            buildingType = buildingTypeList.buildingTypeSOList[1];
+        }
+
     }
 
     private Vector3 GetMouseWorldPosition()
