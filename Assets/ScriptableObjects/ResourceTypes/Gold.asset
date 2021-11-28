@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a418e267761f1cc4399f77b6d5863c8d, type: 3}
   m_Name: Gold
   m_EditorClassIdentifier: 
-  nameString: Wood
+  nameString: Gold
   prefab: {fileID: 0}
