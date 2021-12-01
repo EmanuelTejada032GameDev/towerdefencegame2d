@@ -16,6 +16,4 @@ MonoBehaviour:
   prefab: {fileID: 1892759017410285683, guid: 172b5584a5df0434e85bfe20a8e44eb1, type: 3}
   resourceGeneratorData:
     timerMax: 0.5
-    resourceType:
-    - {fileID: 11400000, guid: 38dc0b1db6c5dc447adc6893b45fceff, type: 2}
-    - {fileID: 11400000, guid: b005bfa0a956ed4488e170a8f870adb0, type: 2}
+    resourceType: {fileID: 11400000, guid: 38dc0b1db6c5dc447adc6893b45fceff, type: 2}
