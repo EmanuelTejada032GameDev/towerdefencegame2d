@@ -11,6 +11,8 @@ public class ResourcesUI : MonoBehaviour
     //[SerializeField] private Transform resourceTemplate;
     private void Awake()
     {
+        //Allows you to find objects and assets , this time is accesing the Scriptable objects of type resource from the assets in project
+        //since you cant get a reference of an asset because is not instantiated.
         resourceTypeList = Resources.Load<ResourceTypeListSO>(typeof(ResourceTypeListSO).Name);
         resourceTypeTransformDictionary = new Dictionary<ResourceTypeSO, Transform>();
 

@@ -16,6 +16,11 @@ public class ResourceManager : MonoBehaviour
 
         resourceAmountDictionary = new Dictionary<ResourceTypeSO, int>();
 
+
+        //Allows you to find objects and assets , this time is accesing the Scriptable objects of type resource from the assets in project
+        //since you cant get a reference of an asset because is not instantiated.
+        //Resources is unity function that allows you to find objects even assets at run time without a reference
+        //Finding the scriptable objects list
         ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeListSO>(typeof(ResourceTypeListSO).Name);
 
         foreach(ResourceTypeSO resourceType in resourceTypeList.resourceTypeSOList)
